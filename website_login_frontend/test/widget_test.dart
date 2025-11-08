@@ -1,18 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:website_login_frontend/main.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
+  testWidgets('Login screen loads', (tester) async {
     await tester.pumpWidget(const MyApp());
-
-    expect(find.text('website_login_frontend App is being generated...'), findsOneWidget);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
-  });
-
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
-
-    expect(find.text('website_login_frontend'), findsOneWidget);
+    // Expect at least the Proceed button label to exist
+    expect(find.text('Proceed'), findsOneWidget);
   });
 }
